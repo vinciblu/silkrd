@@ -30,30 +30,31 @@ const DetailsSection: React.FC<Props> = ({ product }) => {
           </div>
           <h3 className="text-lg mt-2">{t.details}</h3>
           <div className="mt-4">
-            {Object.keys(product.details!).map((key) => {
-              const detailsValue = Array.isArray(product.details![key])
-                ? [...product.details![key]].join(" - ")
-                : product.details![key] === true
-                ? t.true
-                : product.details![key] === false
-                ? t.false
-                : product.details![key];
+          {Object.keys(product.details!).map((key: string) => {
+  const detailsValue = Array.isArray((product.details as {[k: string]: any})[key])
+    ? [...(product.details as {[k: string]: any})[key]].join(" - ")
+    : (product.details as {[k: string]: any})[key] === true
+    ? t.true
+    : (product.details as {[k: string]: any})[key] === false
+    ? t.false
+    : (product.details as {[k: string]: any})[key];
 
-              return (
-                <div className="flex flex-wrap items-center" key={key}>
-                  <h5 className="text-palette-mute text-sm py-1 my-1">
-                    {t[key]}
-                  </h5>
-                  :
-                  <p
-                    className="rtl:text-left rtl:mr-1 ltr:ml-1"
-                    style={{ direction: "ltr" }}
-                  >
-                    {detailsValue}
-                  </p>
-                </div>
-              );
-            })}
+  return (
+    <div className="flex flex-wrap items-center" key={key}>
+      <h5 className="text-palette-mute text-sm py-1 my-1">
+        {t[key]}
+      </h5>
+      :
+      <p
+        className="rtl:text-left rtl:mr-1 ltr:ml-1"
+        style={{ direction: "ltr" }}
+      >
+        {detailsValue}
+      </p>
+    </div>
+  );
+})}
+
           </div>
         </div>
         <CallToAction product={product} />

@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import { client } from "../../../lib/client";
 import { signToken } from "../../../utilities/auth";
 
-const handler = nc();
+const handler = (nc as any)();
 
 handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
   const user = await client.fetch(`*[_type == "user" && email == $email][0]`, {

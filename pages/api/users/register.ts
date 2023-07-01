@@ -6,7 +6,7 @@ import config from "../../../lib/config";
 import { client } from "../../../lib/client";
 import { signToken } from "../../../utilities/auth";
 
-const handler = nc();
+const handler = (nc as any)();
 
 handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
   const projectId = config.projectId;

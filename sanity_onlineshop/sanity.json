@@ -4,14 +4,15 @@
     "name": "onlineshop"
   },
   "api": {
-    "projectId": "3c4n15ly",
+    "projectId": "g5iudbvq",
     "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "@sanity/vision"
   ],
   "env": {
     "development": {
