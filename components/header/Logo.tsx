@@ -8,7 +8,7 @@ const Logo = () => {
       <a className="block md:flex items-center justify-center w-full flex-grow md:flex-grow-0">
         <Image
           src="/images/logo.png"
-          alt="zishop-logo"
+          alt="silkroad-logo"
           width={120}
           height={25}
           objectFit="contain"

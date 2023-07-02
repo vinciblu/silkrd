@@ -1,5 +1,5 @@
 const en: { [key: string]: string } = {
-  mainPage: "ZiShop Main Page",
+  mainPage: "$ilkRoad Main Page",
   search: "Search",
   login: "Login",
   logout: "Logout",
@@ -12,7 +12,7 @@ const en: { [key: string]: string } = {
   totalAmount: "Total Amount",
   totalQuantity: "Total Quantity",
   payableAmount: "Payable Amount",
-  loginAndOrder: "Login and Order",
+  connectAndOrder: "Connect & Order",
   order: "Order",
   orderSummary: "Order Summary",
   cartIsEmpty: "Cart is empty",
@@ -142,10 +142,10 @@ const en: { [key: string]: string } = {
   romanoDescription:
     "Romano sofa has an impressive beauty and can multiply the charm of your home decoration.",
   popularBrands: "Popular Brands",
-  zishopMap: "Zishop Map",
+  silkroadMap: "$ilkRoad Map",
   aboutUs: "About Us",
   contactUs: "Contact Us",
-  saleInZishop: "Sale In Zishop",
+  saleInSilkRoad: "Sale In $ilkRoad",
   careerOpportunities: "Career Opportunities",
   customerServices: "Customer Services",
   commonQuestions: "Common Questions",
@@ -160,7 +160,7 @@ const en: { [key: string]: string } = {
   yourEmail: "Please Enter Your Email",
   register: "Register",
   copyRight:
-    "© 2022 ZiShop. All rights reserved - Designed and Developed with ",
+    "© 2023 $ilkRoad. All rights reserved - Designed and Developed with ",
   sort: "Sort based on: ",
   all: "All",
   newestProducts: "Newest",

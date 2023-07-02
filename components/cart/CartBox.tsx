@@ -78,7 +78,7 @@ const CartBox = () => {
               <div onClick={onCloseCartBoxHandler}>
                 <Link href={"/login"}>
                   <a className="py-2 px-3 bg-palette-primary text-[12px] text-palette-side rounded-lg">
-                    {t.loginAndOrder}
+                    {t.connectAndOrder}
                   </a>
                 </Link>
               </div>

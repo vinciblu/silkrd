@@ -1,0 +1,43 @@
+.walletContainer {
+  @apply bg-palette-fill text-palette-base font-english;
+}
+
+.walletContainer:hover {
+  @apply bg-accent-9 text-palette-side;
+}
+
+.walletDetails {
+  @apply text-palette-mute font-farsi;
+}
+
+.walletAnimation {
+  @apply animate-sidenavLTREntering;
+}
+
+@media (prefers-color-scheme: dark) {
+  .walletContainer {
+    @apply bg-palette-dark text-palette-base font-english;
+  }
+
+  .walletContainer:hover {
+    @apply bg-accent-0 text-palette-side;
+  }
+
+  .walletDetails {
+    @apply text-palette-mute font-farsi;
+  }
+
+  .walletAnimation {
+    @apply animate-sidenavRTLEntering;
+  }
+}
+
+@media (min-width: 1024px) {
+  .walletContainer {
+    @apply bg-palette-card;
+  }
+}
+
+.walletOffers {
+  @apply bg-offersBG;
+}
