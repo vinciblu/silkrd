@@ -1,5 +1,5 @@
 const fa: { [key: string]: string } = {
-  mainPage: "صفحه اصلی ZiShop",
+  mainPage: "صفحه اصلی $ilkRoad",
   search: "جستجو",
   login: "ورود",
   signIn: "ثبت‌نام",
@@ -12,7 +12,7 @@ const fa: { [key: string]: string } = {
   totalAmount: "قیمت کل",
   totalQuantity: "تعداد کل کالا‌ها",
   payableAmount: "مبلغ قابل پرداخت",
-  loginAndOrder: "ورود و ثبت سفارش",
+  connectAndOrder: "ورود و ثبت سفارش",
   order: "ثبت سفارش",
   orderSummary: "خلاصه سفارش",
   cartIsEmpty: "سبد خرید شما خالی است",
@@ -140,10 +140,10 @@ const fa: { [key: string]: string } = {
   romanoDescription:
     "مبل راحتی رومانو زیبایی چشم گیری دارد و می تواند جذابیت دکوراسیون منزل شما را چند برابر کند.",
   popularBrands: "برندهای محبوب",
-  zishopMap: "نقشه Zishop",
+  silkroadMap: "نقشه $ilkRoad",
   aboutUs: "دربارۀ ما",
   contactUs: "تماس با ما",
-  saleInZishop: "فروش در Zishop",
+  saleInSilkRoad: "فروش در $ilkRoad",
   careerOpportunities: "فرصت‌های شغلی",
   customerServices: "خدمات مشتریان",
   commonQuestions: "سؤالات متداول",
