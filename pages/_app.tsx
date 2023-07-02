@@ -14,7 +14,6 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={defaultTheme}>
       <ChainProvider
           chains={[...chains, silk]}
           assetLists={[...assets, silkAssets]}
@@ -24,7 +23,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
     </Layout>
     </ChainProvider>
-    </ChakraProvider>
   );
 }
 

@@ -2,10 +2,6 @@
   @apply bg-palette-fill text-palette-base font-english;
 }
 
-.walletContainer:hover {
-  @apply bg-accent-9 text-palette-side;
-}
-
 .walletDetails {
   @apply text-palette-mute font-farsi;
 }
@@ -17,10 +13,6 @@
 @media (prefers-color-scheme: dark) {
   .walletContainer {
     @apply bg-palette-dark text-palette-base font-english;
-  }
-
-  .walletContainer:hover {
-    @apply bg-accent-0 text-palette-side;
   }
 
   .walletDetails {

@@ -48,7 +48,7 @@ export const Wallet = ({ chainName }: { chainName: string }) => {
       <button className={`${s.root} ${s.ghost} mr-4`} onClick={onClickConnect}>
         {clicked ? 'My Wallet' : 'Connect Wallet'}
       </button>
-      <style jsx>{`
+      <style>{`
         .${s.root} {
           border: none;
           border-radius: 4px;

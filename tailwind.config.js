@@ -7,6 +7,7 @@ function withOpacity(variableName) {
     return `rgba(var(${variableName}))`;
   };
 }
+
 module.exports = {
   darkMode: "class",
   mode: "jit",
@@ -17,15 +18,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        accent: {
-          0: withOpacity("--color-accent-0"),
-          9: withOpacity("--color-accent-9"),
-        },
         palette: {
           primary: withOpacity("--color-primary"),
           secondary: withOpacity("--color-secondary"),
         },
-  
       },
       textColor: {
         palette: {
