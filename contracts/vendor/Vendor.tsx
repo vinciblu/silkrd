@@ -117,7 +117,7 @@ const VendNFT: React.FC<VendNFTProps> = ({ onTokenIdGenerated }) => {
       const scc = await chain.getSigningCosmWasmClient()
 
       const contractAddress =
-        'cosmos1gurgpv8savnfw66lckwzn4zk7fp394lpe667dhu7aw48u40lj6js68amsv'
+        'silk1zwv6feuzhy6a9wekh96cd57lsarmqlwxdypdsplw6zhfncqw6ftq6j2xc8'
       if (chain.address) {
         setClient(new VendorClient(scc, chain.address, contractAddress))
       } else {

@@ -11,7 +11,8 @@ import megaMenuReducer from "./megaMenu-slice";
 import activeMenuItemReducer from "./activeMenuItem-slice";
 import settingBoxReducer from "./settingBox-slice";
 import favoriteReducer from "./favorite-slice";
-
+import receiptReducer from './receipt-slice';
+import checkoutReducer from './checkout-slice'
 const store = configureStore({
   reducer: {
     specialOfferProductsList: specialOfferProductsReducer,
@@ -19,8 +20,10 @@ const store = configureStore({
     sortedProductsList: SortedProductsListReducer,
     cartUi: cartUiReducer,
     cart: cartSliceReducer,
+    receipt: receiptReducer,
     userInfo: userInfoReducer,
     sideNavBar: sideNavBarReducer,
+    checkout: checkoutReducer,
     megaMenu: megaMenuReducer,
     activeMenuItem: activeMenuItemReducer,
     settingBox: settingBoxReducer,

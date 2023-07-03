@@ -6,7 +6,6 @@ import { BuyClient } from './Buy.client'
 import EthCrypto from 'eth-crypto'
 import { v4 } from 'uuid'
 import { cartActions } from '../../store/cart-slice'
-import { ICart } from '../../lib/types/cart'
 import { RootState } from "../../store/index";
 
 interface BuyButtonProps {
@@ -17,7 +16,7 @@ interface BuyButtonProps {
 const Buy: React.FC<BuyButtonProps> = ({ cartPrice, tokenIds }) => {
   const dispatch = useDispatch()
   const cart = useSelector((state: RootState) => state.cart);
-  const [dataToEncrypt, setDataToEncrypt] = useState('')
+  const shippingInfo = useSelector((state: RootState) => state.checkout.shippingInfo); // New line to get shipping info from Redux store
   const [loading, setLoading] = useState(false)
   const [client, setClient] = useState<BuyClient | null>(null)
   const chain = useChain('silk')
@@ -29,11 +28,9 @@ const Buy: React.FC<BuyButtonProps> = ({ cartPrice, tokenIds }) => {
       const scc = await chain.getSigningCosmWasmClient()
 
       const contractAddress =
-        'cosmos1999u8suptza3rtxwk7lspve02m406xe7l622erg3np3aq05gawxs8h8m5j'
+        'silk14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9swzmln6'
       if (chain.address) {
         setClient(new BuyClient(scc, chain.address, contractAddress))
-      } else {
-        // Handle the undefined chain.address situation here, e.g., show an error message
       }
     }
 
@@ -54,15 +51,14 @@ const Buy: React.FC<BuyButtonProps> = ({ cartPrice, tokenIds }) => {
       const alicePublicKey =
         '02927277215d94bb11d9ffb4f82183938d10ac2066df070c73411cc50b388af5f8'
       const cartPriceUsdClean = cartPrice
-      console.log('Cart price USD:', cartPriceUsdClean)
-      console.log('Data to encrypt:', dataToEncrypt)
+
+      const dataToEncrypt = JSON.stringify({ cart, shippingInfo }); // Combine cart and shipping info into one data object
 
       const encryptedData = EthCrypto.encryptWithPublicKey(
         alicePublicKey,
-        JSON.stringify(dataToEncrypt)
+        dataToEncrypt
       )
       const encryptedDataHex = EthCrypto.cipher.stringify(await encryptedData)
-      console.log('Encrypted data:', encryptedDataHex)
       const tokenIdsFiltered = tokenIds.filter(
         (id): id is string => id !== undefined
       )
@@ -81,14 +77,6 @@ const Buy: React.FC<BuyButtonProps> = ({ cartPrice, tokenIds }) => {
       )
 
       if (result) {
-        const order = {
-          id: v4(),
-          totalQuantity: cart.totalQuantity, // From cart state
-          totalAmount: cart.totalAmount, // From cart state
-          items: cart.items, // From cart state
-        }
-
-        // Dispatch the actions to the store
         dispatch(cartActions.clearCart())
       }
     } catch (error) {

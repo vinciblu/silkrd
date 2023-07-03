@@ -26,7 +26,7 @@ const NFT: React.FC<NFTprops> = ({ mintNft }) => {
       const scc = await chain.getSigningCosmWasmClient()
 
       const contractAddress =
-        'cosmos10qt8wg0n7z740ssvf3urmvgtjhxpyp74hxqvqt7z226gykuus7eqn0j5zt'
+        'silk1qg5ega6dykkxc307y25pecuufrjkxkaggkkxh7nad0vhyhtuhw3spff0hv'
       if (chain.address) {
         setClient(new NftClient(scc, chain.address, contractAddress))
       } else {

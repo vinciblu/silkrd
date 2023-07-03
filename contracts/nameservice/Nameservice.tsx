@@ -25,7 +25,7 @@ const Nameservice: React.FC = () => {
       const scc = await chain.getSigningCosmWasmClient()
 
       const contractAddress =
-        'cosmos1pvrwmjuusn9wh34j7y520g8gumuy9xtl3gvprlljfdpwju3x7ucsn7cktv'
+        'silk1aakfpghcanxtc45gpqlx8j3rq0zcpyf49qmhm9mdjrfx036h4z5scvm74h'
       if (chain.address) {
         setClient(new NameserviceClient(scc, chain.address, contractAddress))
       } else {

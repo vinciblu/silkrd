@@ -12,7 +12,7 @@ const en: { [key: string]: string } = {
   totalAmount: "Total Amount",
   totalQuantity: "Total Quantity",
   payableAmount: "Payable Amount",
-  loginAndOrder: "Login and Order",
+  loginAndOrder: "Order",
   order: "Order",
   orderSummary: "Order Summary",
   cartIsEmpty: "Cart is empty",
