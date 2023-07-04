@@ -18,7 +18,7 @@ export const silk: CustomChain = {
   status: 'live',
   network_type: 'testnet',
   pretty_name: 'silk',
-  chain_id: 'silk-da-vinci',
+  chain_id: 'wasmd',
   bech32_prefix: 'silk',
   node_home: '$HOME/.wasmd',
   key_algos: ['secp256k1'],

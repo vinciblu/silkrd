@@ -3,7 +3,7 @@ import { Config } from './config.d'
 
 const config: Config = {
   features: ['no-legacy-stdTx'],
-  chainId: 'silk',
+  chainId: 'wasmd',
   chainName: 'silk',
   rpc: 'http://localhost:26657',
   rest: 'http://localhost:1317',

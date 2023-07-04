@@ -9,6 +9,7 @@ import { userInfoActions } from "../store/user-slice";
 import { getError } from "../utilities/error";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import NameService from "../contracts/nameservice/Nameservice";
 const Login: NextPage = () => {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -37,11 +38,7 @@ const Login: NextPage = () => {
     }
   }
   return (
-    <EnteringBox
-      title="login"
-      submitHandler={LoginHandler}
-      errorMessage={errorMessage}
-    />
+<NameService/>
   );
 };
 

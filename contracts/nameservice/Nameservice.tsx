@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form'
 import { useEffect, useState } from 'react'
 import { NameserviceClient } from './Nameservice.client'
 import { useChain } from '@cosmos-kit/react'
-import { Coin, ExecuteMsg } from './Nameservice.types'
+import { ExecuteMsg } from './Nameservice.types'
 import { v4 } from 'uuid'
 
 interface RegisterForm {
@@ -43,11 +43,7 @@ const Nameservice: React.FC = () => {
   const { register: registerTransfer, handleSubmit: handleSubmitTransfer } =
     useForm<TransferForm>()
 
-  const purchasePrice: Coin = { amount: '1000', denom: 'stake' }
-  const transferPrice: Coin = { amount: '500', denom: 'stake' }
-
   const customGas = 150000 // Set a custom gas value (adjust this according to your needs)
-  const customFee = 5 // Set a custom fee value (adjust this according to your needs)
 
   const handleRegister = async ({ name }: RegisterForm) => {
     if (!client) {
@@ -60,10 +56,8 @@ const Nameservice: React.FC = () => {
         { name },
         {
           gas: customGas.toString(), // Use custom gas value
-          amount: [{ denom: 'stake', amount: customFee.toString() }],
-        }, // Use custom gas and fee values
-        undefined,
-        [purchasePrice]
+          amount: [{ denom: 'silk', amount: "0" }], // Fee is now zero
+        }
       )
       console.log('Registration result:', result)
     } catch (error) {
@@ -82,10 +76,8 @@ const Nameservice: React.FC = () => {
         { name, to },
         {
           gas: customGas.toString(), // Use custom gas value
-          amount: [{ denom: 'stake', amount: customFee.toString() }],
-        }, // Use custom gas and fee values
-        undefined,
-        [transferPrice]
+          amount: [{ denom: 'silk', amount: "1000" }], // Fee is now zero
+        }
       )
       console.log('Transfer result:', result)
     } catch (error) {
